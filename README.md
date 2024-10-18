@@ -1,8 +1,5 @@
-Create and push a new branch using **git checkout -b kata-2b-your-name** and **git push -u origin kata-2b-your-name**
-
 # **Client management with react and hooks**
-
-The idea of our company is to create a large application to manage clients. Therefore, Client management, from the first session, has been redeveloped using React due to its scalability.
+Once your merge request from the last kata was reviewed, a few improvements were suggested. These are refactors that will help make the app more scalable.
 
 Use correct node version: **nvm use**
 
@@ -12,19 +9,11 @@ Run app: **npm run dev**
 
 **Tips:** commented code is the skeleton to complete the exercises.
 
-**Info:** it's not a problem that clients are lost when website is reloaded because in a future an API will be used to get them.
+**Info:** it's not a problem that customers are lost when website is reloaded because in a future an API will be used to get them.
 
-**Exercise 1.**
+## Exercise 1
+First suggestion is about new customer alert. In a future, this alert will be resused on other components. In order to avoid the duplication of the useEffect, that handle this alert, in a future, could you refactor it to be a custom hook?
 
-Once a client is added to the list, the fields are not cleaned. The principal engineer tells you to fix the issue using useReduce, in order to avoid a set of functions, that modify the state, being triggered in a row.
-
-Principal engineer would like to avoid this bad practise:<br />
-**setName(''); <br />
-setEmail(''); <br />
-setPhone(''); <br />
-setAddress(''); <br />**
-
-When state updates are frequent and/or complex, useReducer provides better performance through its centralized update logic, avoiding unnecessary re-renders and excessive state management code.
-
-**Could you also create a clear button?**
+## Exercise 2
+Customer Management System is mind to be a large application, so in a future new react compoments related with customers will be added. Variables customer and setCustomer will be the parameters for these new react components. In order to avoid these variables being passed again and again from parent to children, principal engineer suggested you to create a context.
 
