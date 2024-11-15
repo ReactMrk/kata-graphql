@@ -1,5 +1,13 @@
-
 import React from 'react';
+
+const customers = [
+  {
+    name: 'Bob',
+    email: 'bob@sky.uk',
+    phone: '77777777777',
+    address: 'Watermark'
+  }
+]
 
 describe('CustomerList', () => {
   describe('Client added alert', () => {
