@@ -13,7 +13,9 @@ const CustomerManagement = () => {
 	}
 	return (
 		<>
-			<button onClick={handleLogin(loggedIn)}>{loggedIn ? "Log out" : "Log in"}</button>
+			<div style={{ display: "inline-block" }}>
+				<button onClick={handleLogin(loggedIn)}>{loggedIn ? "Log out" : "Log in"}</button>
+			</div>
 			<Alert visible={homeAlertVisible} text={homeAlertText}/>
 			{loggedIn && (
 				<CustomerProvider>
