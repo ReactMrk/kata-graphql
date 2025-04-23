@@ -6,6 +6,8 @@ const clientFragment = gql`
     email
     grossSalary
     phone
+    address
+    netSalary
   }
 `;
 
@@ -27,13 +29,4 @@ const ADD_CLIENT = gql`
   ${clientFragment}
 `;
 
-const GET_CLIENT_EXTRA_FIELDS = gql`
-  query GetClient($email: String) {
-    getClient(email: $email) {
-      address
-      netSalary
-    }
-  }
-`;
-
-export { GET_CLIENTS, ADD_CLIENT, GET_CLIENT_EXTRA_FIELDS };
+export { GET_CLIENTS, ADD_CLIENT };
