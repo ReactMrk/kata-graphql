@@ -22,9 +22,11 @@ Use GraphQL playground to test new endpoints.
 
 In Client type, add a calculated field called netSalary as a Float. In order to calculate it, the following algorithm is needed.
 
+```
 await new Promise((resolver) => {
-setTimeout(() => resolver(client.grossSalary / 2), 2000);
+  setTimeout(() => resolver(client.grossSalary / 2), 2000);
 });
+```
 
 As you notice, it takes somes time to calculate this field, in forder to save times, this field should be only calculate when is requested.
 
