@@ -1,13 +1,13 @@
 import React, { useState, createContext } from 'react';
 import { useQuery } from '@apollo/client';
-import { GET_CLIENTS } from '../queries/client-queries';
+import { GET_CUSTOMERS } from '../queries/customer-queries';
 
 const CustomerContext = createContext();
 
 const CustomerProvider = ({ children }) => {
   const [customers, setCustomers] = useState([]);
-  useQuery(GET_CLIENTS, { onCompleted: data => {
-    setCustomers(data?.getClients);
+  useQuery(GET_CUSTOMERS, { onCompleted: data => {
+    setCustomers(data?.getCustomers);
   }});
 
   return (

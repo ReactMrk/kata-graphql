@@ -1,15 +1,15 @@
 import React from "react";
 import { useState } from "react";
 import { useLazyQuery } from '@apollo/client';
-import { GET_CLIENT_EXTRA_FIELDS } from '../queries/client-queries';
+import { GET_CUSTOMER_EXTRA_FIELDS } from '../queries/customer-queries';
 
 const ExtraFields = ({ email }) => {
   const [displayExtraFields, setDisplayExtraFields] = useState(false);
-  const [getClient, { data: getClientResponse, loading }] = useLazyQuery(GET_CLIENT_EXTRA_FIELDS);
-  const clientExtraFields = getClientResponse?.getClient;
+  const [getCustomer, { data: customerCustomerResponse, loading }] = useLazyQuery(GET_CUSTOMER_EXTRA_FIELDS);
+  const customerExtraFields = customerCustomerResponse?.getCustomer;
   const handleDisplayExtraFieldsClick = () => {
     setDisplayExtraFields(true);
-    getClient({
+    getCustomer({
       variables: { email }
     });
   };
@@ -19,9 +19,9 @@ const ExtraFields = ({ email }) => {
   if (loading) return <p style={{ color: 'blue' }}>Loading...</p>
   return (
     <>
-      <span>Net Salary: {clientExtraFields?.netSalary}</span>
+      <span>Net Salary: {customerExtraFields?.netSalary}</span>
       <br />
-      <span>Address: {clientExtraFields?.address}</span>
+      <span>Address: {customerExtraFields?.address}</span>
       <br />
     </>
   )

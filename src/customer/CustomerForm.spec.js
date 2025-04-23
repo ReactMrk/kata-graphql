@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { render, screen, waitFor } from "@testing-library/react";  
 import { useMutation } from '@apollo/client';
 import userEvent from '@testing-library/user-event';
-import { ADD_CLIENT } from '../queries/client-queries';
+import { ADD_CUSTOMER } from '../queries/customer-queries';
 import CustomerForm from "./CustomerForm";
 
 jest.mock('react', () => ({
@@ -16,7 +16,7 @@ jest.mock('@apollo/client', () => ({
 }));
 
 const renderComponent = () => render(<CustomerForm />);
-const client = {
+const customer = {
   name: 'John',
   address: 'Diagonal 45',
   email: 'john@sky.uk',
@@ -26,7 +26,7 @@ const client = {
 
 const setCustomers = jest.fn();
 
-const fillClientInputs = async () => {
+const fillCustomerInputs = async () => {
   userEvent.type(screen.getByPlaceholderText('Name'), 'John');
   await waitFor(() => expect(screen.getByPlaceholderText('Name')).toHaveValue('John'));
   userEvent.type(screen.getByPlaceholderText('Email'), 'john@sky.uk');
@@ -46,45 +46,45 @@ describe('CustomerForm', () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
-  it.skip('should update clients variable from context when a new client is added and onCompleted is defined when useMutation is defined', async () => {
-    const addClient = jest.fn();
+  it.skip('should update customers variable from context when a new customer is added and onCompleted is defined when useMutation is defined', async () => {
+    const addCustomer = jest.fn();
     useMutation.mockImplementation((_, { onCompleted }) => {
-      onCompleted({addClient: client });
-      return [addClient];
+      onCompleted({addCustomer: customer });
+      return [addCustomer];
     });
 
     renderComponent();
 
-    expect(useMutation).toHaveBeenCalledWith(ADD_CLIENT, { onCompleted: expect.any(Function) });
-    await fillClientInputs();
+    expect(useMutation).toHaveBeenCalledWith(ADD_CUSTOMER, { onCompleted: expect.any(Function) });
+    await fillCustomerInputs();
 
     userEvent.click(screen.getByRole('button', { name: 'Add customer' }));
 
     await waitFor(() => {
-      expect(addClient).toHaveBeenCalledWith({
+      expect(addCustomer).toHaveBeenCalledWith({
         variables: {
-          client
+          customer
         }
       });
     });
-    expect(setCustomers).toHaveBeenCalledWith(client);
+    expect(setCustomers).toHaveBeenCalledWith(customer);
   });
 
-  it('should update clients variable from context when a new client is added and onCompleted is defined when request addClient is triggered', async () => {
-    const addClient = jest.fn().mockImplementation(({ onCompleted }) => {
-      onCompleted({ addClient: client });
+  it('should update customers variable from context when a new customer is added and onCompleted is defined when request addCustomer is triggered', async () => {
+    const addCustomer = jest.fn().mockImplementation(({ onCompleted }) => {
+      onCompleted({ addCustomer: customer });
     });
-    useMutation.mockReturnValue([addClient]);
+    useMutation.mockReturnValue([addCustomer]);
     
     renderComponent();
-    expect(useMutation).toHaveBeenCalledWith(ADD_CLIENT);
+    expect(useMutation).toHaveBeenCalledWith(ADD_CUSTOMER);
 
-    await fillClientInputs();
+    await fillCustomerInputs();
     userEvent.click(screen.getByRole('button', { name: 'Add customer' }));
 
     await waitFor(() => {
-      expect(addClient).toHaveBeenCalledWith({ variables: { client }, onCompleted: expect.any(Function)})
-      expect(setCustomers).toHaveBeenCalledWith(client);
+      expect(addCustomer).toHaveBeenCalledWith({ variables: { customer }, onCompleted: expect.any(Function)})
+      expect(setCustomers).toHaveBeenCalledWith(customer);
     });
   });
 });
