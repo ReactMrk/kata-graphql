@@ -1,5 +1,7 @@
-# **Client management testing**
-Many developers will be working on this app simultaneously and a number of new functionalities will be added. We should create unit tests to make sure that no functionality is accidentally broken.
+# **Client management graphql**
+
+A graphQL back end has been added to the project in order to store the clients.
+GraphQL back end Github URL is https://github.com/ReactMrk/graphql-backend
 
 Use proper node version: **nvm use**
 
@@ -7,35 +9,37 @@ Install dependencies: **npm install**
 
 Run app: **npm run dev**
 
-**Exercise 1.**
+**Exercise 1A.**
 
-Create a test for CustomerList component. The new tests should be a unit test, so the custom hook should be mocked.
+Create two new endpoints on graphQL back end app.
 
-As described in the file, you need to write a test to assert that an alert is rendered when the useAlert() custom hook returns true, and the alert is not rendered when the custom hook returns false.
+- getClient endpoint should return the client that matches the email passed as a parameter.
+- removeClient endpoint should delete the client that matches the email passed as a parameter.
 
-In addition, a test should be added to assert that customers are being rendered.
+Use GraphQL playground to test new endpoints.
 
-Use test file CustomerList.spec.js
+**Exercise 1B.**
 
-**Exercise 2.**
+In Client type, add a calculated field called netSalary as a Float. In order to calculate it, the following algorithm is needed.
 
-Create a test for Client Management, components CustomerForm and CustomerList should be mocked. The first unit test should assert that CustomerForm and CustomerList are rendered by default. The second test should assert that CustomerForm and CustomerList are not rendered when button is clicked. 
+await new Promise((resolver) => {
+setTimeout(() => resolver(client.grossSalary / 2), 2000);
+});
 
-Use test file ClientManagement.spec.js
+As you notice, it takes somes time to calculate this field, in forder to save times, this field should be only calculate when is requested.
 
+Use GraphQL playground to test new endpoints.
 
-**Kata 4 common issues**
+**Exercise 2A.**
+In CustomerForm.jsx, use useMutation in change function submitEmployee in order to add customers using graphQL.
 
-Vscode config:
-  - Install extension: Jest Runner
-  - Issue with pnpm (vscode):
-    Go to Settings
-    Search for “jest” in the top bar or search in the left menu Extensions -> Jest-Runner Config
-    Remove any custom command in Jestrunner: Jest Command
+**Exercise 2B.**
+In CustomerContext.js use useQuery in order to load the clients stored in graphQL back end.
 
-Intellij config: 
-  - Change node interpreter
-    Click right button on describe
-    Modify run configuration
-    Change node interpreter to Node 20
+**Exercise 3.**
+How you already notice, the app is too slow, we know that fields address and netSalary don't need to be displayed when app is loaded, could the app be faster?
+Create a new button using ExtraFields.jsx that will trigger a request (using useLazyQuery) to get and display address and netSalary fields.
+Notice that a new query should be create on client-queries.js and the other ones should be modified.
 
+**Extra**
+The request to get address and netSalary fields takes a lot of time, the string "Loading..." should be displayed instead of "Show more..." button while request is in progress.
