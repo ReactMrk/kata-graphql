@@ -3,7 +3,6 @@ import { useEffect, useContext } from "react";
 import { CustomerContext } from "./CustomerContext";
 import Alert from "./Alert";
 import useAlert from "./hooks/useAlert";
-import ExtraFields from "./ExtraFields";
 
 const CustomerList = ({ setHomeAlertText, setHomeAlertVisible }) => {
   const { customers } = useContext(CustomerContext);
@@ -39,7 +38,10 @@ const CustomerList = ({ setHomeAlertText, setHomeAlertVisible }) => {
               <br />
               <span>Gross Salary: {customer?.grossSalary}</span>
               <br />
-              <ExtraFields email={customer?.email} />
+              <span>Net Salary: {customerExtraFields?.netSalary}</span>
+              <br />
+              <span>Address: {customerExtraFields?.address}</span>
+              <br />
             </li>
           );
         })}

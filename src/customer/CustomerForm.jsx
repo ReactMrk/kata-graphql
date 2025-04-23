@@ -1,5 +1,4 @@
 import React, { useReducer, useContext } from 'react';
-import { ADD_CUSTOMER } from '../queries/customer-queries';
 import { CustomerContext } from './CustomerContext';
 import { useMutation } from '@apollo/client';
 
@@ -51,23 +50,7 @@ const reducer = (state, action) => {
 const CustomerForm = () => {
   const [form, dispatchForm] = useReducer(reducer, initalFormValue);
   const { setCustomers } = useContext(CustomerContext);
-  // const [addCustomer] = useMutation(ADD_CUSTOMER, { onCompleted: data => setCustomers(data?.addCustomer) });
-  const [addCustomer] = useMutation(ADD_CUSTOMER);
   const submitEmployee = () => {
-    addCustomer(
-      { 
-        variables: {
-          customer: { 
-            name: form.name,
-            email: form.email,
-            phone: form.phone,
-            address: form.address,
-            grossSalary: parseInt(form.grossSalary) || 0
-          }
-        },
-        onCompleted: data => setCustomers(data?.addCustomer)
-      }
-    )
     dispatchForm({ type: 'CLEAR' });
   };
   return (
