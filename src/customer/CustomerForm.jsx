@@ -5,7 +5,6 @@ import { useMutation } from '@apollo/client';
 const initalFormValue = {
     name: '',
     email: '',
-    phone: '',
     address: '',
     grossSalary: ''
 };
@@ -21,12 +20,6 @@ const reducer = (state, action) => {
       return {
         ...state,
         email: action.value
-      }
-    }
-    case 'SET_PHONE': {
-      return {
-        ...state,
-        phone: action.value
       }
     }
     case 'SET_ADDRESS': {
@@ -57,7 +50,6 @@ const CustomerForm = () => {
     <div className="form">
       <input type="text" placeholder="Name" onChange={value => dispatchForm({ type: 'SET_NAME', value: value.target.value})} value={form.name} />
       <input type="email" placeholder="Email" onChange={value => dispatchForm({ type: 'SET_EMAIL', value: value.target.value})} value={form.email} />
-      <input type="tel" placeholder="Phone" onChange={value => dispatchForm({ type: 'SET_PHONE', value: value.target.value})} value={form.phone} />
       <input type="text" placeholder="Address" onChange={value => dispatchForm({ type: 'SET_ADDRESS', value: value.target.value})} value={form.address} />
       <input type="number" placeholder="Gross Salary" onChange={value => dispatchForm({ type: 'SET_GROSS_SALARY', value: value.target.value})} value={form.grossSalary} />
       <div style={{ marginTop: "10px", width: "100%" }}>

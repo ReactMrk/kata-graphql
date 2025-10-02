@@ -20,7 +20,6 @@ const customer = {
   name: 'John',
   address: 'Diagonal 45',
   email: 'john@sky.uk',
-  phone: '0777777777',
   grossSalary: 500000
 } 
 
@@ -31,8 +30,6 @@ const fillCustomerInputs = async () => {
   await waitFor(() => expect(screen.getByPlaceholderText('Name')).toHaveValue('John'));
   userEvent.type(screen.getByPlaceholderText('Email'), 'john@sky.uk');
   await waitFor(() => expect(screen.getByPlaceholderText('Email')).toHaveValue('john@sky.uk'));
-  userEvent.type(screen.getByPlaceholderText('Phone'), '0777777777');
-  await waitFor(() => expect(screen.getByPlaceholderText('Phone')).toHaveValue('0777777777'));
   userEvent.type(screen.getByPlaceholderText('Address'), 'Diagonal 45');
   await waitFor(() => expect(screen.getByPlaceholderText('Address')).toHaveValue('Diagonal 45'));
   userEvent.type(screen.getByPlaceholderText('Gross Salary'), '500000');

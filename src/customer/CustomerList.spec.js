@@ -4,7 +4,6 @@ const customers = [
   {
     name: 'Bob',
     email: 'bob@sky.uk',
-    phone: '77777777777',
     address: 'Watermark'
   }
 ]

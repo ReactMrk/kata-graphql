@@ -5,7 +5,6 @@ const customerFragment = gql`
     name
     email
     grossSalary
-    phone
     address
     netSalary
   }
