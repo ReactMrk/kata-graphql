@@ -13,7 +13,7 @@ Run app: **npm run dev**
 
 Create two new endpoints on graphQL back end app.
 
-- getCustomer endpoint should return the customer that matches the email passed as a parameter.
+- getCustomer endpoint should return the customer that matches the email passed as a (mandatory) parameter.
 - removeCustomer endpoint should delete the customer that matches the email passed as a parameter.
 
 Use GraphQL playground to test new endpoints.
@@ -28,7 +28,7 @@ await new Promise((resolver) => {
 });
 ```
 
-As you notice, it takes somes time to calculate this field, in forder to save times, this field should be only calculate when is requested.
+As you notice, it takes some time to calculate this field, in order to save times, this field should be only calculate when is requested.
 
 Use GraphQL playground to test new endpoints.
 
@@ -45,7 +45,7 @@ In CustomerContext.js use useQuery in order to load the customers stored in grap
 How you already notice, the app is too slow, we know that fields address and netSalary don't need to be displayed when app is loaded, could the app be faster?
 
 Create a new button using ExtraFields.jsx that will trigger a request (using useLazyQuery) to get and display address and netSalary fields.
-Notice that a new query should be create on customer-queries.js and the other ones should be modified.
+Notice that a new query should be created on customer-queries.js and the other ones should be modified.
 
 **Extra**
 
