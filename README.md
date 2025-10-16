@@ -9,8 +9,6 @@ Install dependencies: **npm install**
 
 Run app: **npm run dev**
 
-![Demo](https://github.com/ReactMrk/lifecycle-kata/blob/main/src/assets/hooks-kata-solution-kata.gif?raw=true)
-
 **Exercise 1A.**
 
 Create two new endpoints on graphQL back end app.
@@ -52,3 +50,5 @@ Notice that a new query should be created on customer-queries.js and the other o
 **Extra**
 
 The request to get address and netSalary fields takes a lot of time, the string "Loading..." should be displayed instead of "Show more..." button while request is in progress.
+
+![Demo](https://github.com/ReactMrk/lifecycle-kata/blob/main/src/assets/hooks-kata-solution-kata.gif?raw=true)
