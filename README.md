@@ -9,7 +9,7 @@ Install dependencies: **npm install**
 
 Run app: **npm run dev**
 
-![Demo](https://github.com/ReactMrk/hooks-kata/blob/main/assets/demo.gif?raw=true)
+![Demo](https://github.com/ReactMrk/lifecycle-kata/blob/main/src/assets/hooks-kata-solution-kata.gif?raw=true)
 
 **Exercise 1A.**
 
