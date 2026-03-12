@@ -34,7 +34,7 @@ Use GraphQL playground to test new endpoints.
 
 **Exercise 2A.**
 
-In CustomerForm.jsx, use useMutation in change function submitEmployee in order to add customers using graphQL.
+In CustomerForm.jsx, use a useMutation inside the submitEmployee function in order to add customers using graphQL.
 
 **Exercise 2B.**
 
