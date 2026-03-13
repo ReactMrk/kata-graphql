@@ -38,10 +38,6 @@ const CustomerList = ({ setHomeAlertText, setHomeAlertVisible }) => {
               <br />
               <span>Gross Salary: {customer?.grossSalary}</span>
               <br />
-              <span>Net Salary: {customerExtraFields?.netSalary}</span>
-              <br />
-              <span>Address: {customerExtraFields?.address}</span>
-              <br />
             </li>
           );
         })}
