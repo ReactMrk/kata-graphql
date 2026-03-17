@@ -12,8 +12,6 @@ const ExtraFields = ({ email }) => {
   }
   return (
     <>
-      <span>Net Salary: {customerExtraFields?.netSalary}</span>
-      <br />
       <span>Address: {customerExtraFields?.address}</span>
       <br />
     </>
