@@ -6,7 +6,6 @@ const customerFragment = gql`
     email
     grossSalary
     address
-    netSalary
   }
 `;
 const ADD_CUSTOMER = gql`
