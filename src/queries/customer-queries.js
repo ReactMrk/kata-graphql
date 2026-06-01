@@ -17,4 +17,39 @@ const ADD_CUSTOMER = gql`
   ${customerFragment}
 `;
 
-export { ADD_CUSTOMER };
+const GET_CUSTOMERS = gql`
+    query GetCustomers {
+        getCustomers {
+            ...customerFields
+        }
+    }
+    ${customerFragment}
+`;
+
+const GET_CUSTOMER = gql`
+    query GetCustomer($email: String) {
+        getCustomer(email: $email) {
+            ...customerFields
+        }
+    }
+    ${customerFragment}
+`;
+
+const REMOVE_CUSTOMER = gql`
+    mutation RemoveCustomer($email: String) {
+        removeCustomer(email: $email) {
+            ...customerFields
+        }
+    }
+    ${customerFragment}
+`;
+
+const GET_CUSTOMER_EXTRA_FIELDS = gql`
+    query GetCustomer($email: String) {
+        getCustomer(email: $email) {
+            address
+        }
+    }
+`;
+
+export { ADD_CUSTOMER, GET_CUSTOMERS, GET_CUSTOMER, REMOVE_CUSTOMER, GET_CUSTOMER_EXTRA_FIELDS };
