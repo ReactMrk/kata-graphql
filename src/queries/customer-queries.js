@@ -6,19 +6,8 @@ const customerFragment = gql`
     email
     grossSalary
     address
-    netSalary
   }
 `;
-
-const GET_CUSTOMERS = gql`
-  query Query {
-    getCustomers {
-      ...customerFields
-    }
-  }
-  ${customerFragment}
-`;
-
 const ADD_CUSTOMER = gql`
   mutation AddCustomer($customer: InputCustomer) {
     addCustomer(customer: $customer) {
@@ -28,4 +17,4 @@ const ADD_CUSTOMER = gql`
   ${customerFragment}
 `;
 
-export { GET_CUSTOMERS, ADD_CUSTOMER };
+export { ADD_CUSTOMER };
