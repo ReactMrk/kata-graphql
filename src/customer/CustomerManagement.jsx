@@ -3,6 +3,7 @@ import { CustomerProvider } from './CustomerContext';
 import CustomerForm from './CustomerForm';
 import CustomerList from './CustomerList';
 import Alert from './Alert';
+import CustomerSearchAndRemove from "./CustomerSearchAndRemove";
 
 const CustomerManagement = () => {
 	const [loggedIn, setLoggedIn] = useState(true);
@@ -21,6 +22,7 @@ const CustomerManagement = () => {
 				<CustomerProvider>
 					<CustomerForm />
 					<CustomerList setHomeAlertVisible={setHomeAlertVisible} setHomeAlertText={setHomeAlertText} />
+					<CustomerSearchAndRemove />
 				</CustomerProvider>
 			)}
 		</>
