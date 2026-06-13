@@ -6,6 +6,9 @@ Install dependencies: **npm install**
 
 Run app: **npm run dev**
 
+\
+***--  NOTE: this first exercise needs to be completed on the 'graphql-backend' project, linked below --***
+
 **Exercise 1A.**
 A graphQL back end has been added to the project in order to store the clients.
 GraphQL backend Github URL is https://github.com/ReactMrk/graphql-backend
@@ -18,9 +21,15 @@ Create three new endpoints on the GraphQL backend:
 
 Use GraphQL playground to test new endpoints.
 
+\
+***-- NOTE: The remaining exercises need to be completed on the 'kata-graphql' project --***
+
 **Exercise 1B.**
 
-Create the graphQL queries for each new endpoint in customer-queries.js
+Create the graphQL queries/mutations for each new endpoint in customer-queries.js.
+
+Note: if you are using IntelliJ, your IDE might mark certain parts of this file in red,
+as if there were errors. But you can safely ignore them, and it should still work regardless.
 
 **Exercise 2A.**
 
