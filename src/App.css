@@ -22,21 +22,24 @@ h1 {
 input {
   margin-left: 0 !important;
 }
-input[type="text"], input[type="tel"], input[type="email"], input[type="number"] {
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+input[type='number'] {
   padding: 10px;
   margin: 5px;
   width: calc(50% - 12px);
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 button {
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 4px;
@@ -75,7 +78,9 @@ button:hover {
 .hidden {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s 0.5s, opacity 0.5s linear;
+  transition:
+    visibility 0s 0.5s,
+    opacity 0.5s linear;
 }
 
 button.show-more-button {

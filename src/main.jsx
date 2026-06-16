@@ -6,7 +6,7 @@ import './index.css';
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
-  uri: "http://localhost:4000/graphql"
+  uri: 'http://localhost:4000/graphql',
 });
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -14,5 +14,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ApolloProvider client={client}>
       <App />
     </ApolloProvider>
-  </React.StrictMode>
-)
+  </React.StrictMode>,
+);

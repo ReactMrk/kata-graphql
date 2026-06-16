@@ -18,38 +18,44 @@ const ADD_CUSTOMER = gql`
 `;
 
 const GET_CUSTOMERS_LIST = gql`
-    query GetCustomersList {
-        getCustomersList {
-            ...customerFields
-        }
+  query GetCustomersList {
+    getCustomersList {
+      ...customerFields
     }
-    ${customerFragment}
+  }
+  ${customerFragment}
 `;
 
 const GET_CUSTOMER = gql`
-    query GetCustomer($email: String!) {
-        getCustomer(email: $email) {
-            ...customerFields
-        }
+  query GetCustomer($email: String!) {
+    getCustomer(email: $email) {
+      ...customerFields
     }
-    ${customerFragment}
+  }
+  ${customerFragment}
 `;
 
 const REMOVE_CUSTOMER = gql`
-    mutation RemoveCustomer($email: String!) {
-        removeCustomer(email: $email) {
-            ...customerFields
-        }
+  mutation RemoveCustomer($email: String!) {
+    removeCustomer(email: $email) {
+      ...customerFields
     }
-    ${customerFragment}
+  }
+  ${customerFragment}
 `;
 
 const GET_CUSTOMER_EXTRA_FIELDS = gql`
-    query GetCustomer($email: String!) {
-        getCustomer(email: $email) {
-            address
-        }
+  query GetCustomer($email: String!) {
+    getCustomer(email: $email) {
+      address
     }
+  }
 `;
 
-export { ADD_CUSTOMER, GET_CUSTOMERS_LIST, GET_CUSTOMER, REMOVE_CUSTOMER, GET_CUSTOMER_EXTRA_FIELDS };
+export {
+  ADD_CUSTOMER,
+  GET_CUSTOMERS_LIST,
+  GET_CUSTOMER,
+  REMOVE_CUSTOMER,
+  GET_CUSTOMER_EXTRA_FIELDS,
+};

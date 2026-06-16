@@ -1,9 +1,9 @@
-import React from "react";
-import { useEffect, useContext } from "react";
-import { CustomerContext } from "./CustomerContext";
-import Alert from "./Alert";
-import useAlert from "./hooks/useAlert";
-import ExtraFields from "./ExtraFields";
+import React from 'react';
+import { useEffect, useContext } from 'react';
+import { CustomerContext } from './CustomerContext';
+import Alert from './Alert';
+import useAlert from './hooks/useAlert';
+import ExtraFields from './ExtraFields';
 
 const CustomerList = ({ setHomeAlertText, setHomeAlertVisible }) => {
   const { customers } = useContext(CustomerContext);
@@ -18,15 +18,15 @@ const CustomerList = ({ setHomeAlertText, setHomeAlertVisible }) => {
   };
 
   useEffect(() => {
-    showHomeAlert(3000, "Welcome to the Client List");
+    showHomeAlert(3000, 'Welcome to the Client List');
     return () => {
-      showHomeAlert(3000, "Goodbye");
+      showHomeAlert(3000, 'Goodbye');
     };
   }, []);
 
   return (
     <>
-      <Alert visible={displayAlert} text={"New client has been added"} />
+      <Alert visible={displayAlert} text={'New client has been added'} />
       <ul className='customer-list'>
         {customers.map((customer) => {
           return (

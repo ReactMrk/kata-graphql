@@ -6,9 +6,11 @@ const CustomerContext = createContext();
 
 const CustomerProvider = ({ children }) => {
   const [customers, setCustomers] = useState([]);
-  useQuery(GET_CUSTOMERS_LIST, { onCompleted: data => {
-    setCustomers(data?.getCustomersList);
-  }});
+  useQuery(GET_CUSTOMERS_LIST, {
+    onCompleted: (data) => {
+      setCustomers(data?.getCustomersList);
+    },
+  });
 
   return (
     <CustomerContext.Provider value={{ customers, setCustomers }}>
