@@ -9,7 +9,7 @@ const customerFragment = gql`
   }
 `;
 const ADD_CUSTOMER = gql`
-  mutation AddCustomer($customer: InputCustomer) {
+  mutation AddCustomer($customer: InputCustomer!) {
     addCustomer(customer: $customer) {
       ...customerFields
     }
@@ -17,9 +17,9 @@ const ADD_CUSTOMER = gql`
   ${customerFragment}
 `;
 
-const GET_CUSTOMERS = gql`
-    query GetCustomers {
-        getCustomers {
+const GET_CUSTOMERS_LIST = gql`
+    query GetCustomersList {
+        getCustomersList {
             ...customerFields
         }
     }
@@ -27,7 +27,7 @@ const GET_CUSTOMERS = gql`
 `;
 
 const GET_CUSTOMER = gql`
-    query GetCustomer($email: String) {
+    query GetCustomer($email: String!) {
         getCustomer(email: $email) {
             ...customerFields
         }
@@ -36,7 +36,7 @@ const GET_CUSTOMER = gql`
 `;
 
 const REMOVE_CUSTOMER = gql`
-    mutation RemoveCustomer($email: String) {
+    mutation RemoveCustomer($email: String!) {
         removeCustomer(email: $email) {
             ...customerFields
         }
@@ -45,11 +45,11 @@ const REMOVE_CUSTOMER = gql`
 `;
 
 const GET_CUSTOMER_EXTRA_FIELDS = gql`
-    query GetCustomer($email: String) {
+    query GetCustomer($email: String!) {
         getCustomer(email: $email) {
             address
         }
     }
 `;
 
-export { ADD_CUSTOMER, GET_CUSTOMERS, GET_CUSTOMER, REMOVE_CUSTOMER, GET_CUSTOMER_EXTRA_FIELDS };
+export { ADD_CUSTOMER, GET_CUSTOMERS_LIST, GET_CUSTOMER, REMOVE_CUSTOMER, GET_CUSTOMER_EXTRA_FIELDS };
