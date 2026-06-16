@@ -15,7 +15,7 @@ GraphQL backend Github URL is https://github.com/ReactMrk/graphql-backend
 
 Create three new endpoints on the GraphQL backend:
 
-1. getCustomers should return the full list of customers
+1. getCustomersList should return the full list of customers
 2. getCustomer endpoint should return the customer that matches the email passed as a (mandatory) parameter.
 3. removeCustomer endpoint should delete the customer that matches the email passed as a parameter.
 
