@@ -4,15 +4,19 @@ const customers = [
   {
     name: 'Bob',
     email: 'bob@sky.uk',
-    address: 'Watermark'
-  }
-]
+    address: 'Watermark',
+  },
+];
 
 describe('CustomerList', () => {
   describe('Client added alert', () => {
-    it.todo('should render an alert with text Welcome to the Client List when displayAlert from hook is true');
+    it.todo(
+      'should render an alert with text Welcome to the Client List when displayAlert from hook is true',
+    );
 
-    it.todo('should not render an alert with text Welcome to the Client List when displayAlert from hook is false');
+    it.todo(
+      'should not render an alert with text Welcome to the Client List when displayAlert from hook is false',
+    );
   });
 
   describe('Display client list', () => {

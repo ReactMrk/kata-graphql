@@ -7,7 +7,7 @@ Install dependencies: **npm install**
 Run app: **npm run dev**
 
 \
-***--  NOTE: this first exercise needs to be completed on the 'graphql-backend' project, linked below --***
+**_-- NOTE: this first exercise needs to be completed on the 'graphql-backend' project, linked below --_**
 
 **Exercise 1A.**
 A graphQL back end has been added to the project in order to store the clients.
@@ -22,7 +22,7 @@ Create three new endpoints on the GraphQL backend:
 Use GraphQL playground to test new endpoints.
 
 \
-***-- NOTE: The remaining exercises need to be completed on the 'kata-graphql' project --***
+**_-- NOTE: The remaining exercises need to be completed on the 'kata-graphql' project --_**
 
 **Exercise 1B.**
 
@@ -45,6 +45,7 @@ Note that a new query should be created on customer-queries.js and the other one
 
 **Exercise 4**
 Create a new input field which accepts an email address. Add two buttons:
+
 - 4.1. find - displays the customer with the email address matching the input
 - 4.2. remove - deletes the customer with the email address matching the input
 
