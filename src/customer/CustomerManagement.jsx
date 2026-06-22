@@ -3,6 +3,7 @@ import { CustomerProvider } from './CustomerContext';
 import CustomerForm from './CustomerForm';
 import CustomerList from './CustomerList';
 import Alert from './Alert';
+import CustomerSearchAndRemove from "./CustomerSearchAndRemove";
 
 const CustomerManagement = () => {
   const [loggedIn, setLoggedIn] = useState(true);
@@ -13,7 +14,7 @@ const CustomerManagement = () => {
   };
   return (
     <>
-      <div style={{ display: 'inline-block' }}>
+      <div style={{ display: 'block' }}>
         <button onClick={handleLogin(loggedIn)}>{loggedIn ? 'Log out' : 'Log in'}</button>
       </div>
       <Alert visible={homeAlertVisible} text={homeAlertText} />

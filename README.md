@@ -40,13 +40,15 @@ In CustomerForm.jsx, use a useMutation inside the submitEmployee function in ord
 In CustomerContext.js use useQuery in order to load the customers stored in graphQL back end.
 
 **Exercise 3.**
+
 Create a new button using ExtraFields.jsx that will trigger a request (using useLazyQuery) to get and display address field only.
 Note that a new query should be created on customer-queries.js and the other ones should be modified.
 
-**Exercise 4**
-Create a new input field which accepts an email address. Add two buttons:
+**Exercise 4. BONUS EXERCISE**
 
-- 4.1. find - displays the customer with the email address matching the input
-- 4.2. remove - deletes the customer with the email address matching the input
+In CustomerSearchAndRemove.jsx, create a new input field which accepts an email address. Implement the logic for the two buttons:
+
+- 4.1. Search - displays the customer with the email address matching the input and displays the customer
+- 4.2. Remove - deletes the customer with the email address matching the input (no need to display the customer)
 
 ![Demo](https://github.com/ReactMrk/lifecycle-kata/blob/main/src/assets/hooks-kata-solution-kata.gif?raw=true)
