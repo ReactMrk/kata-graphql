@@ -16,8 +16,7 @@ const ExtraFields = ({ email }) => {
   }
   return (
     <>
-      <span>Address: {customerExtraFields?.address}</span>
-      <br />
+      <span>Address: {customerExtraFieldsResponse?.getCustomer?.address}</span>
     </>
   );
 };

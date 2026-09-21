@@ -36,8 +36,6 @@ const CustomerSearchAndRemove = () => {
                         <br/>
                         <span>Email: {searchResultCustomer?.email}</span>
                         <br/>
-                        <span>Phone: {searchResultCustomer?.phone}</span>
-                        <br/>
                         <span>Gross Salary: {searchResultCustomer?.grossSalary}</span>
                         <br/>
                         <ExtraFields email={searchResultCustomer?.email}/>
