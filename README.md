@@ -42,7 +42,7 @@ In CustomerContext.js use useQuery in order to load the customers stored in grap
 **Exercise 3.**
 
 Create a new button using ExtraFields.jsx that will trigger a request (using useLazyQuery) to get and display address field only.
-Note that a new query should be created on customer-queries.js and the other ones should be modified.
+Note that a new query should be created on customer-queries.js and the other ones should be modified to not query the address field.
 
 **Exercise 4. BONUS EXERCISE**
 

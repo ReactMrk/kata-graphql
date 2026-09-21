@@ -2,7 +2,6 @@ import React, { useReducer, useContext } from 'react';
 import { CustomerContext } from './CustomerContext';
 import { useMutation } from '@apollo/client';
 import { ADD_CUSTOMER } from '../queries/customer-queries';
-import ExtraFields from './ExtraFields';
 
 const initalFormValue = {
   name: '',
@@ -53,7 +52,6 @@ const CustomerForm = () => {
         customer: {
           name: form?.name,
           email: form?.email,
-          phone: form?.phone,
           address: form?.address,
           grossSalary: parseInt(form?.grossSalary) || 0,
         },

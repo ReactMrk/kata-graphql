@@ -5,12 +5,11 @@ import { GET_CUSTOMER_EXTRA_FIELDS } from '../queries/customer-queries';
 
 const ExtraFields = ({ email }) => {
   const [displayExtraFields, setDisplayExtraFields] = useState(false);
-  const [getCustomer, { data: customerCustomerResponse, loading }] =
+  const [getCustomerExtraFields, { data: customerExtraFieldsResponse }] =
     useLazyQuery(GET_CUSTOMER_EXTRA_FIELDS);
-  const customerExtraFields = customerCustomerResponse?.getCustomer;
   const handleDisplayExtraFieldsClick = () => {
     setDisplayExtraFields(true);
-    getCustomer({
+    getCustomerExtraFields({
       variables: { email },
     });
   };
@@ -21,10 +20,9 @@ const ExtraFields = ({ email }) => {
       </button>
     );
   }
-  if (loading) return <p style={{ color: 'blue' }}>Loading...</p>;
   return (
     <>
-      <span>Address: {customerExtraFields?.address}</span>
+      <span>Address: {customerExtraFieldsResponse?.getCustomer?.address}</span>
     </>
   );
 };

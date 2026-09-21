@@ -35,8 +35,6 @@ const CustomerList = ({ setHomeAlertText, setHomeAlertVisible }) => {
               <br />
               <span>Email: {customer?.email}</span>
               <br />
-              <span>Phone: {customer?.phone}</span>
-              <br />
               <span>Gross Salary: {customer?.grossSalary}</span>
               <br />
               <ExtraFields email={customer?.email} />
