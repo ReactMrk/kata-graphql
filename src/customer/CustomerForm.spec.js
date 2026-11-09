@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import { useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/client/react';
 import userEvent from '@testing-library/user-event';
 import { ADD_CUSTOMER } from '../queries/customer-queries';
 import CustomerForm from './CustomerForm';

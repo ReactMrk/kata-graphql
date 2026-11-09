@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { useLazyQuery } from '@apollo/client';
+import { useLazyQuery } from '@apollo/client/react';
 
 const ExtraFields = ({ email }) => {
   const [displayExtraFields, setDisplayExtraFields] = useState(false);
