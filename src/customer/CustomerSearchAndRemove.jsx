@@ -1,5 +1,5 @@
 import React, {useContext, useState} from "react";
-import { useLazyQuery, useMutation } from "@apollo/client";
+import { useLazyQuery, useMutation } from "@apollo/client/react";
 import { GET_CUSTOMER, REMOVE_CUSTOMER } from "../queries/customer-queries";
 import ExtraFields from "./ExtraFields";
 import {CustomerContext} from "./CustomerContext";

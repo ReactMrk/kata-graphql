@@ -1,5 +1,5 @@
 import React, { useState, createContext } from 'react';
-import { useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client/react';
 import { GET_CUSTOMERS_LIST } from '../queries/customer-queries';
 
 const CustomerContext = createContext();

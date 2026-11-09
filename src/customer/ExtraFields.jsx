@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { useLazyQuery } from '@apollo/client';
+import { useLazyQuery } from '@apollo/client/react';
 import { GET_CUSTOMER_EXTRA_FIELDS } from '../queries/customer-queries';
 
 const ExtraFields = ({ email }) => {

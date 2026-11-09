@@ -1,6 +1,6 @@
 import React, { useReducer, useContext } from 'react';
 import { CustomerContext } from './CustomerContext';
-import { useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/client/react';
 import { ADD_CUSTOMER } from '../queries/customer-queries';
 
 const initalFormValue = {
